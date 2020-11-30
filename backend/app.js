@@ -55,15 +55,15 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-
-
 // default value for title local
 app.locals.title = 'DaCappo';
 
-
-
 const index = require('./routes/index');
-app.use('/', index);
+const musicSheets = require('./routes/musicRoutes');
+const auth = require('./routes/authRoutes');
 
+app.use('/', index);
+app.use('/api', musicSheets);
+app.use('/auth', auth);
 
 module.exports = app;

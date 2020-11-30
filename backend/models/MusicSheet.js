@@ -12,8 +12,11 @@ const musicSheetSchema = new Schema(
     },
     file: {
       type: String,
-      enum: ['USER', 'ADMIN'],
-      default: 'USER'
+      required: true
+    },
+    editorial: {
+      type: String,
+      required: true
     },
     instruments: {
       type: String,
@@ -23,6 +26,6 @@ const musicSheetSchema = new Schema(
     timestamps: true,
     versionKey: false
   }
-)
+);
 
 module.exports = model('MusicSheet', musicSheetSchema);
