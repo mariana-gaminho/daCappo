@@ -1,0 +1,15 @@
+@import '~bootstrap-scss/bootstrap-grid';
+@import 'constants';
+@import './fonts';
+
+html {
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+  background-color: $dark-blue;
+}

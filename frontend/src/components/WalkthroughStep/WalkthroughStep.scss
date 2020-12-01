@@ -1,0 +1,40 @@
+@import '../../styles/constants.scss';
+
+.walkthrough-step {
+  height: 100vh;
+  background-color: #ffff;
+  color: $dark-blue;
+
+  img {
+    width: 100%;
+  }
+
+  .text {
+    padding: 10px 30px;
+
+    .title {
+      font-size: 30px;
+      margin-bottom: 5px;
+      margin-top: 0px;
+    }
+
+    .subtitle {
+      margin-top: 5px;
+    }
+  }
+
+  .step-dots {
+    width: 60%;
+    margin-top: 10px;
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid $light-blue;
+    }
+
+    .fill {
+      background-color: $light-blue;
+    }
+  }
+}

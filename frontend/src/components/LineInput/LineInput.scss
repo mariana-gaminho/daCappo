@@ -1,0 +1,26 @@
+@import '../../styles/constants.scss';
+
+.line-input {
+  input {
+    height: 40px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $dark-blue;
+    border-radius: 3px;
+    background-color: #ffff;
+    padding: 12px;
+    font-size: 1.1em;
+    outline: none;
+  }
+
+  input::placeholder {
+    color: #c8cbcf;
+  }
+
+  .input-label {
+    color: $dark-blue;
+    margin-bottom: 7px;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}

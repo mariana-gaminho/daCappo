@@ -1,0 +1,54 @@
+@import '../../styles/constants.scss';
+
+.login {
+  height: 100vh;
+  background-color: $light-gray;
+  color: $dark-blue;
+  padding: 20px 28px;
+
+  .go-back {
+    .go-back-icon {
+      width: 32px;
+      height: auto;
+      filter: opacity(60%);
+      transform: rotate(90deg);
+    }
+  }
+
+  h1 {
+    font-weight: 800;
+    margin-left: 20px;
+    font-size: 2.3em;
+  }
+
+  .logo {
+    width: 50px;
+    height: 62px;
+    margin-left: 20px;
+  }
+
+  .card {
+    background-color: #ffff;
+    -webkit-box-shadow: -1px 1px 9px -1px rgba(44, 62, 79, 0.25);
+    -moz-box-shadow: -1px 1px 9px -1px rgba(44, 62, 79, 0.25);
+    box-shadow: -1px 1px 9px -1px rgba(44, 62, 79, 0.25);
+    height: 76%;
+    border-radius: 30px;
+    padding: 20px 30px;
+
+    .inputs {
+      height: 45%;
+    }
+
+    .login-button {
+      height: 50%;
+      p {
+        color: $light-blue;
+        font-weight: bold;
+        a {
+          color: $light-blue;
+        }
+      }
+    }
+  }
+}
