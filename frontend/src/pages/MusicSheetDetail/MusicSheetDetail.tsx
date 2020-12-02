@@ -47,7 +47,7 @@ const MusicSheetDetail = (props:any) => {
     <div className="music-sheet-detail">
       <div className="menu d-flex justify-content-between align-items-center">
         <Link
-          to="/catalogue"
+          to={props.location.state.prevPath || "/catalogue"}
           className="go-back"
         >
           <img src={goBack} alt="go-back" className="go-back-icon"/>

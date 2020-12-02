@@ -10,6 +10,7 @@ type Props = {
   placeholder?: string;
   type?: string;
   style?: CSSProperties;
+  outerStyle?: CSSProperties;
 };
 
 const LineInput = ({
@@ -20,8 +21,9 @@ const LineInput = ({
   placeholder,
   type = "text",
   style,
+  outerStyle,
 }: Props) => (
-  <div className="line-input">
+  <div className="line-input" style={{...outerStyle}}>
     {label &&<p className="input-label">{label}</p>}
     <input
       type={type}

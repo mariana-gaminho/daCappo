@@ -38,8 +38,9 @@ class Signup extends Component<Props, State> {
   }
 
   signup() {
-    const isProduction = process.env.NODE_ENV === "production";
-    const baseURL = isProduction ? 'https://dacappo.herokuapp.com' : 'http://localhost:3000';
+    // const isProduction = process.env.NODE_ENV === "production";
+    // const baseURL = isProduction ? 'https://dacappo.herokuapp.com' : 'http://localhost:3000';
+    const baseURL = 'https://dacappo.herokuapp.com';
     axios.post(`${baseURL}/auth/signup`, this.state)
     .then(({ data }: any) => {
       this.props.history.push("/walkthrough");

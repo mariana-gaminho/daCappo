@@ -30,8 +30,9 @@ export default class Catalogue extends Component<Props, State> {
   }
 
   componentDidMount() {
-    const isProduction = process.env.NODE_ENV === "production";
-    const baseURL = isProduction ? 'https://dacappo.herokuapp.com' : 'http://localhost:3000';
+    // const isProduction = process.env.NODE_ENV === "production";
+    // const baseURL = isProduction ? 'https://dacappo.herokuapp.com' : 'http://localhost:3000';
+    const baseURL = 'https://dacappo.herokuapp.com';
     axios.get(`${baseURL}/api/musicSheet`)
     .then(({ data }: any) => {
         this.setState({ musicSheets: data.musicSheets });
@@ -54,9 +55,9 @@ export default class Catalogue extends Component<Props, State> {
           <Link to="/add-music-sheets" style={{ marginRight: "15px" }}>
             <img src={addIcon} alt="add"/>
           </Link>
-          <Link to="/search-music-sheets">
+          {musicSheets && <Link to="/search-music-sheets">
             <img src={searchIcon} alt="search" className="search-icon"/>
-          </Link>
+          </Link>}
         </div>
         <p className="title">Music sheets</p>
         <div className="music-sheets d-flex flex-wrap justify-content-between">
@@ -67,6 +68,7 @@ export default class Catalogue extends Component<Props, State> {
                   pathname: `/music-sheet-detail/${musicSheet._id}`,
                   state: {
                     musicSheet,
+                    prevPath: this.props.location.pathname,
                   }
                 }}>
                   <img src={imagesArray[Math.floor(Math.random() * imagesArray.length)]} alt="music-sheet-image"/>

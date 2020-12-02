@@ -10,7 +10,7 @@
     margin: 10px 0;
   }
 
-  a {
+  .close-link {
     width: 7%;
     height: 17%;
 
@@ -18,6 +18,70 @@
       width: 100%;
       height: 100%;
       filter: opacity(75%);
+    }
+  }
+
+  .search-bar {
+    .search-icon {
+      transform: scaleX(-1);
+      width: 10%;
+      height: 15%;
+    }
+  }
+
+  .filter {
+    .label {
+      color: $dark-blue;
+      margin-bottom: 7px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .title {
+      width: 50%;
+      background-color: #e3e6e8;
+      border-radius: 8px;
+      padding: 8px;
+      p {
+        background-color: #59939d;
+        color: #ffff;
+        font-weight: bold;
+        padding: 3px;
+        border-radius: 5px;
+        margin: 0;
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .music-sheets {
+    margin-top: 20px;
+    .music-sheet {
+      margin-top: 20px;
+      a {
+        width: 45%;
+      }
+      img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: -1px 6px 17px -10px rgba(0, 0, 0, 0.68);
+      }
+    }
+    .info {
+      width: 55%;
+      padding: 0 15px;
+      font-weight: 300;
+      p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .name {
+        font-weight: bold;
+        font-size: 1.35em;
+        color: $light-blue;
+        margin: 0;
+      }
     }
   }
 }

@@ -3,10 +3,11 @@ import axios from 'axios';
 
 const useForm = () => {
   const [form, setForm] = useState({});
-  const isProduction = process.env.NODE_ENV === 'production';
-  const baseURL = isProduction
-    ? 'https://dacappo.herokuapp.com'
-    : 'http://localhost:3000';
+  // const isProduction = process.env.NODE_ENV === 'production';
+  // const baseURL = isProduction
+  //   ? 'https://dacappo.herokuapp.com'
+  //   : 'http://localhost:3000';
+  const baseURL = 'https://dacappo.herokuapp.com';
 
   function handleInputs(e) {
     e.persist();

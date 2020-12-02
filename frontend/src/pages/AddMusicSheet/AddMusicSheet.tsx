@@ -12,12 +12,9 @@ import './AddMusicSheet.scss';
 
 const AddMusicSheet = (props: any) => {
   const [form, handleInputs, uploadPDF] = useForm();
-  const isProduction = process.env.NODE_ENV === "production";
-  const baseURL = isProduction ? 'https://dacappo.herokuapp.com' : 'http://localhost:3000';
-
-  useEffect(() => {
-    console.log(form);
-  }, [form]);
+  // const isProduction = process.env.NODE_ENV === "production";
+  // const baseURL = isProduction ? 'https://dacappo.herokuapp.com' : 'http://localhost:3000';
+  const baseURL = 'https://dacappo.herokuapp.com';
 
   function addMusicSheet() {
     axios.post(`${baseURL}/api/musicSheet`, form)

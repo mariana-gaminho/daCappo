@@ -36,8 +36,9 @@ class Login extends Component<Props, State> {
   }
 
   login() {
-    const isProduction = process.env.NODE_ENV === "production";
-    const baseURL = isProduction ? 'https://dacappo.herokuapp.com' : 'http://localhost:3000';
+    // const isProduction = process.env.NODE_ENV === "production";
+    // const baseURL = isProduction ? 'https://dacappo.herokuapp.com' : 'http://localhost:3000';
+    const baseURL = 'https://dacappo.herokuapp.com';
     let filteredUser;
     axios.get(`${baseURL}/auth/login`)
     .then(({ data }: any) => {
