@@ -19,13 +19,18 @@ const useForm = () => {
 
   async function uploadPDF(e) {
     const file = new FormData();
+    let secureUrl;
+
     file.append('pdf', e.target.files[0]);
     const {
       data: { image },
     } = await axios.post(`${baseURL}/upload`, file);
+
+    secureUrl = image.split('http').join('https');
+
     setForm((prevState) => ({
       ...prevState,
-      file: image,
+      file: secureUrl,
     }));
   }
 
