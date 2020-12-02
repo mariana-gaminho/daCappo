@@ -4,11 +4,10 @@ const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
 const favicon      = require('serve-favicon');
-const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-const cors = require('cors');
+// const cors = require('cors');
 
 
 mongoose
@@ -25,12 +24,17 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
-app.use(
-  cors({
-    credentials: true,
-    origin: ['http://localhost:3001']
-  })
-)
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: ['http://localhost:3001']
+//   })
+// )
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 // Middleware Setup
 app.use(logger('dev'));
