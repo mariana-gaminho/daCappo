@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import goBack from '../../assets/icons/go-back-icon.png';
 import blueLogo from '../../assets/icons/logo-blue.png';
@@ -16,6 +17,7 @@ type State = {
 
 type Props = {
   location: any;
+  history: any;
 }
 
 class Signup extends Component<Props, State> {
@@ -27,11 +29,22 @@ class Signup extends Component<Props, State> {
       password: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.signup = this.signup.bind(this);
   }
 
   handleInputChange(e: any) {
     // @ts-ignore
     this.setState({ [e.target.name]: e.target.value });
+  }
+
+  signup() {
+    const isProduction = process.env.NODE_ENV === "production";
+    const baseURL = isProduction ? 'https://dacappo.herokuapp.com' : 'http://localhost:3000';
+    axios.post(`${baseURL}/auth/signup`, this.state)
+    .then(({ data }: any) => {
+      this.props.history.push("/walkthrough");
+    })
+    .catch((err: any) => console.log(err))
   }
 
   render() {
@@ -80,7 +93,7 @@ class Signup extends Component<Props, State> {
             <div className="d-flex flex-wrap justify-content-center" style={{ width: "100%" }}>
               <BasicButton
                 text="JOIN US"
-                onClick={() => false}
+                onClick={this.signup}
                 disabled={false}
                 style={{ paddingLeft: "30%", paddingRight: "30%"}}
               />

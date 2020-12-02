@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import goBack from '../../assets/icons/go-back-icon.png';
 import blueLogo from '../../assets/icons/logo-blue.png';
@@ -15,6 +16,7 @@ type State = {
 
 type Props = {
   location: any;
+  history: any;
 }
 
 class Login extends Component<Props, State> {
@@ -25,11 +27,28 @@ class Login extends Component<Props, State> {
       password: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.login = this.login.bind(this);
   }
 
   handleInputChange(e: any) {
     // @ts-ignore
     this.setState({ [e.target.name]: e.target.value });
+  }
+
+  login() {
+    const isProduction = process.env.NODE_ENV === "production";
+    const baseURL = isProduction ? 'https://dacappo.herokuapp.com' : 'http://localhost:3000';
+    let filteredUser;
+    axios.get(`${baseURL}/auth/login`)
+    .then(({ data }: any) => {
+      filteredUser = data.users.filter((user: any) => (
+        user.email === this.state.email && user.password === this.state.password
+      ));
+      if(filteredUser.length > 0) {
+        this.props.history.push("/catalogue");
+      } else alert("Incorrect credentials");
+    })
+    .catch((err: any) => console.log(err))
   }
 
   render() {
@@ -71,7 +90,7 @@ class Login extends Component<Props, State> {
             <div className="d-flex flex-wrap justify-content-center" style={{ width: "100%" }}>
               <BasicButton
                 text="LOGIN"
-                onClick={() => false}
+                onClick={this.login}
                 disabled={false}
               />
               <p>Don't have an account? <Link to="/signup">Sign up</Link></p>

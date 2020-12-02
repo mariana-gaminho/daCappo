@@ -46,6 +46,7 @@ const AddMusicSheet = (props: any) => {
           name="file"
           type="file"
           placeholder="Choose file"
+          style={{ backgroundColor: "#fafafa" }}
         />
       </div>
       <div className="format">

@@ -8,7 +8,6 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-const passport = require('./config/passport');
 const cors = require('cors');
 
 
@@ -32,8 +31,6 @@ app.use(
     origin: ['http://localhost:3001']
   })
 )
-
-app.use(passport.initialize())
 
 // Middleware Setup
 app.use(logger('dev'));

@@ -20,7 +20,7 @@ const musicSheetSchema = new Schema(
     },
     instruments: {
       type: String,
-      enum: ['piano', 'violin', 'guitar', 'cello', 'flute', 'viola', 'trombone']
+      required: true
     },
   },{
     timestamps: true,

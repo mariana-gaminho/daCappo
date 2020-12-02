@@ -34,6 +34,8 @@ class Search extends Component<{}, State> {
         </div>
         <LineInput
           onChange={this.handleInputChange}
+          placeholder="Search for..."
+          style={{ backgroundColor: "#fafafa" }}
         />
       </div>
     );
