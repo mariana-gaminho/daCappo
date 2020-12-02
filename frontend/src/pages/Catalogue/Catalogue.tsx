@@ -3,11 +3,11 @@ import axios from 'axios';
 
 import searchIcon from '../../assets/icons/search-icon.png';
 import addIcon from '../../assets/icons/add-icon.png';
-import musicSheetImage1 from '../../assets/icons/music-sheet-1.jpg';
-import musicSheetImage2 from '../../assets/icons/music-sheet-2.jpg';
+import musicSheetImage1 from '../../assets/icons/music-sheet-1.png';
+import musicSheetImage2 from '../../assets/icons/music-sheet-2.png';
 import musicSheetImage3 from '../../assets/icons/music-sheet-3.png';
 import musicSheetImage4 from '../../assets/icons/music-sheet-4.png';
-import musicSheetImage5 from '../../assets/icons/music-sheet-5.jpg';
+import musicSheetImage5 from '../../assets/icons/music-sheet-5.png';
 
 import './Catalogue.scss';
 import { Link } from 'react-router-dom';
