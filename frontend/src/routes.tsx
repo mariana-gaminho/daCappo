@@ -5,6 +5,10 @@ import StartMenu from './pages/StartMenu';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Walkthrough from './pages/Walkthrough';
+import Catalogue from './pages/Catalogue';
+import AddMusicSheet from './pages/AddMusicSheet';
+import Search from './pages/Search';
+import MusicSheetDetail from './pages/MusicSheetDetail';
 
 const Router: FunctionComponent = () => (
   <BrowserRouter>
@@ -13,6 +17,10 @@ const Router: FunctionComponent = () => (
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/walkthrough" component={Walkthrough} />
+      <Route exact path="/catalogue" component={Catalogue} />
+      <Route exact path="/add-music-sheets" component={AddMusicSheet} />
+      <Route exact path="/search-music-sheets" component={Search} />
+      <Route exact path="/music-sheet-detail/:id" component={MusicSheetDetail} />
     </Switch>
   </BrowserRouter>
 );

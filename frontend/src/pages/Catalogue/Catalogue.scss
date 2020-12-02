@@ -1,0 +1,55 @@
+@import '../../styles/constants.scss';
+
+.catalogue {
+  padding: 7% 9%;
+  .icons {
+    width: 100%;
+
+    a {
+      width: 8%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .search-icon {
+      transform: scaleX(-1);
+    }
+  }
+
+  .title {
+    font-size: 35px;
+    font-weight: 800;
+    margin-top: 0;
+    color: $dark-blue;
+  }
+
+  .music-sheets {
+    .music-sheet {
+      max-width: 45%;
+      text-align: center;
+      font-weight: bold;
+
+      img {
+        max-width: 90%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: -1px 6px 17px -10px rgba(0, 0, 0, 0.68);
+      }
+
+      .name {
+        color: $dark-blue;
+        margin-bottom: 0;
+        margin-top: 5px;
+      }
+
+      .composer {
+        color: $light-blue;
+        margin-top: 0;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

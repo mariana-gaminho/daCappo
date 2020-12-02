@@ -6,11 +6,19 @@ type Props = {
   text: string;
   route: string;
   style?: CSSProperties;
+  location: any;
 };
 
-const AuthButton = ({ text, route, style }: Props) => {
+const AuthButton = ({ text, route, style, location }: Props) => {
   return (
-    <Link to={route} className="auth-button" style={{...style}}>
+    <Link
+      to={{
+        pathname: route,
+        state: { prevPath: location.pathname }
+      }}
+      className="auth-button"
+      style={{...style}}
+    >
       <p>{text}</p>
     </Link>
   )

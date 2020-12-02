@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BasicButton from '../BasicButton';
 
 import './WalkthroughStep.scss';
@@ -26,17 +27,20 @@ const WalkthroughStep = ({ step, title, subtitle, image}: Props) => {
         </div>
       </div>
       <div className="d-flex justify-content-center" style={{ backgroundColor:"#ffff" }}>
-        <BasicButton
-          text="GOT IT!"
-          onClick={() => false}
-          style={{
-            paddingLeft: "16%",
-            paddingRight: "16%",
-            paddingTop: "3%",
-            paddingBottom: "3%",
-            marginTop: "10%"
-          }}
-        />
+        <Link to="/catalogue" style={{ width: "80%" }}>
+          <BasicButton
+            text="GOT IT!"
+            onClick={() => false}
+            style={{
+              paddingLeft: "28%",
+              paddingRight: "28%",
+              paddingTop: "3%",
+              paddingBottom: "3%",
+              width: "100%",
+              marginTop: "15%",
+            }}
+          />
+        </Link>
       </div>
     </div>
   );

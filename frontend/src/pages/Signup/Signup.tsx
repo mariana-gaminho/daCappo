@@ -14,7 +14,11 @@ type State = {
   password: string;
 }
 
-class Signup extends Component<{}, State> {
+type Props = {
+  location: any;
+}
+
+class Signup extends Component<Props, State> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -34,7 +38,13 @@ class Signup extends Component<{}, State> {
     const { name, email, password } = this.state;
     return (
       <div className="sign-up">
-        <Link to="/" className="go-back">
+        <Link
+          to={{
+            pathname: "/",
+            state: { prevPath: this.props.location.pathname }
+          }}
+          className="go-back"
+        >
           <img src={goBack} alt="go-back" className="go-back-icon"/>
         </Link>
         <div className="d-flex align-items-center">

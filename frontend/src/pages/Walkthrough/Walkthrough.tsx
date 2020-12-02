@@ -27,7 +27,7 @@ class Walkthrough extends Component<{}, State> {
       if(this.state.step < 3) {
         this.setState({ step: this.state.step + 1 })
       } else this.setState({ step: 1 });
-    }, 4000);
+    }, 2000);
     this.setState({ intervalId: intervalId })
   }
 

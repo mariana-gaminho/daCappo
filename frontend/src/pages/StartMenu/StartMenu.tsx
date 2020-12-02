@@ -9,7 +9,12 @@ type State = {
   showSplash: boolean;
 }
 
-export default class StartMenu extends Component<{}, State> {
+type Props = {
+  location: any;
+  history: any;
+}
+
+export default class StartMenu extends Component<Props, State> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -18,9 +23,17 @@ export default class StartMenu extends Component<{}, State> {
   }
 
   componentDidMount() {
-    setTimeout(() => {
+    if(this.props.location.state
+      && (this.props.location.state.prevPath === "/login"
+        || this.props.location.state.prevPath === "/signup")
+    ){
       this.setState({ showSplash: false});
-    }, 3000);
+      this.props.history.replace();
+    } else {
+      setTimeout(() => {
+        this.setState({ showSplash: false});
+      }, 3000);
+    }
   }
 
   render() {
@@ -46,10 +59,12 @@ export default class StartMenu extends Component<{}, State> {
                   text="LOGIN"
                   route="/login"
                   style={{ marginRight: "30px" }}
+                  location={this.props.location}
                 />
                 <AuthButton 
                   text="SIGN UP"
                   route="/signup"
+                  location={this.props.location}
                 />
               </div>
             </div>

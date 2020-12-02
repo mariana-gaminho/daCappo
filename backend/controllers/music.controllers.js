@@ -7,7 +7,7 @@ exports.addMusicSheet = (req, res, next) => {
   .catch(err => res.status(500).json({ err }))
 }
 
-// Read
+// Read all
 exports.getAllMusicSheets = (req, res, next) => {
   MusicSheet.find()
   .then(musicSheets => res.status(200).json({ musicSheets }))

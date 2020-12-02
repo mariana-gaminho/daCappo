@@ -1,0 +1,53 @@
+@import '../../styles/constants.scss';
+
+.add-music-sheet {
+  padding: 7% 9%;
+
+  .title {
+    font-size: 34px;
+    font-weight: 800;
+    color: $dark-blue;
+    margin: 10px 0;
+  }
+
+  a {
+    width: 8%;
+    height: 18%;
+
+    .close {
+      width: 100%;
+      height: 100%;
+      filter: opacity(75%);
+    }
+  }
+
+  .clip {
+    width: 10%;
+    height: 20%;
+  }
+
+  .format {
+    .label {
+      color: $dark-blue;
+      margin-bottom: 7px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .plain-copy {
+      width: 50%;
+      background-color: #e3e6e8;
+      border-radius: 8px;
+      padding: 8px;
+      p {
+        background-color: #59939d;
+        color: #ffff;
+        font-weight: bold;
+        padding: 3px;
+        border-radius: 5px;
+        margin: 0;
+        text-align: center;
+      }
+    }
+  }
+}
